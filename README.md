@@ -26,3 +26,47 @@ torch.save(net1.state_dict(), ‘7-net_params.pkl’)  # 同上
 由于保存整个模型将耗费大量的存储，故官方推荐**只保存参数**，然后在建好模型的基础上加载。
 
 一、只保存模型参数
+
+`torch.save(model.state_dict(), path)`
+
+特别地，如果还想保存某一次训练采用的优化器、epochs等信息，可将这些信息组合起来构成一个字典，然后将字典保存起来：
+
+`state = {'model': model.state_dict(), 'optimizer': optimizer.state_dict(), 'epoch': epoch}`
+
+`torch.save(state, path)`
+
+二、加载模型的参数
+
+`model.load_state_dict(torch.load(path))`
+
+以字典形式保存
+
+`checkpoint = torch.load(path)`
+
+`model.load_state_dict(checkpoint['model'])`
+
+`optimizer.load_state_dict(checkpoint['optimizer'])`
+
+`epoch = checkpoint(['epoch'])`
+
+三、实战应用
+
+**一般加载模型/模型参数都写在模型即将训练之前**
+
+**一般保存模型/模型参数都写在打印模型loss之后**
+
+![load](load.png)
+
+![save](save.png)
+
+四、补充
+
+如果需要保存/加载整个模型
+
+`torch.save(model, path)`
+
+`model = torch.load(path)`
+
+五、参考
+
+Reference: https://www.jianshu.com/p/1cd6333128a1
