@@ -79,6 +79,7 @@ torch.save(net1.state_dict(), ‘7-net_params.pkl’)  # 同上
 
 ![load_new](load_new.png)
 
+注意：m_dict没有.to(device)属性，只有model才有
 六、参考
 
 Reference: https://www.jianshu.com/p/1cd6333128a1
