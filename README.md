@@ -67,6 +67,12 @@ torch.save(net1.state_dict(), ‘7-net_params.pkl’)  # 同上
 
 `model = torch.load(path)`
 
-五、参考
+五、易错点提示
+
+如果模型保存的时候将模型参数和优化器参数一并保存了。保存格式为字典套字典的格式。如下：
+
+![dict](dict.png)
+
+六、参考
 
 Reference: https://www.jianshu.com/p/1cd6333128a1
