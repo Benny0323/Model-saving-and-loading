@@ -73,6 +73,12 @@ torch.save(net1.state_dict(), ‘7-net_params.pkl’)  # 同上
 
 ![dict](dict.png)
 
+而调用模型的时候只需要加载模型参数model.state_dict()，也就是大字典里面的其中一个小字典。直接调用模型保存路径就会报错。
+
+需要将代码改为：
+
+![load](load.png)
+
 六、参考
 
 Reference: https://www.jianshu.com/p/1cd6333128a1
