@@ -7,9 +7,9 @@ pytorch保存模型非常简单，主要有两种方法：
 保存整个模型 (结构+参数)。
 
 torch.save( )实现对网络结构和模型参数的保存。有两种保存方式：
-**一是保存整个神经网络的的结构信息和模型参数信息，save的对象是网络模型；**
+**一是保存整个神经网络的的结构信息和模型参数信息，save的对象是网络模型。我们可以理解为保存的是整个模型文件；**
 
-**二是只保存神经网络的训练模型参数，save的对象是net.state_dict( )**。
+**二是只保存神经网络的训练模型权重等参数，save的对象是net.state_dict( )。我们可以理解为保存的是模型的状态文件**。
 
 假设我有一个训练好的模型名叫net1,则
 
@@ -39,15 +39,15 @@ torch.save(net1.state_dict(), ‘7-net_params.pkl’)  # 同上
 
 `model.load_state_dict(torch.load(path))`
 
-以字典形式保存
+以大字典形式保存
 
 `checkpoint = torch.load(path)`
 
-`model.load_state_dict(checkpoint['model'])`
+`model.load_state_dict(checkpoint['model'])  相当于大字典里面的一个小字典`  
 
-`optimizer.load_state_dict(checkpoint['optimizer'])`
+`optimizer.load_state_dict(checkpoint['optimizer'])  相当于大字典里面的一个小字典`
 
-`epoch = checkpoint(['epoch'])`
+`epoch = checkpoint(['epoch'])  相当于大字典里面的一个小字典`
 
 三、实战应用
 
