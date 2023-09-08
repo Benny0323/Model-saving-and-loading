@@ -77,7 +77,7 @@ torch.save(net1.state_dict(), ‘7-net_params.pkl’)  # 同上
 
 需要将代码改为：
 
-![load](load.png)
+![load_new](load_new.png)
 
 六、参考
 
