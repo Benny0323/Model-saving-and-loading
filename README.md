@@ -84,3 +84,6 @@ torch.save(net1.state_dict(), ‘7-net_params.pkl’)  # 同上
 六、参考
 
 Reference: https://www.jianshu.com/p/1cd6333128a1
+
+## Star History
+[![Star History Chart](https://api.star-history.com/svg?repos=Benny0323/Model-saving-and-loading&type=Date)](https://star-history.com/#Benny0323/Model-saving-and-loading&Date)
